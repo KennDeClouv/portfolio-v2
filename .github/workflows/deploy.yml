@@ -35,9 +35,10 @@ jobs:
           git ftp push \
             --force \
             --auto-init \
-            --syncroot=./
+            --syncroot=./ \
             --user="${{ secrets.FTP_USERNAME }}" \
-            --passwd="${{ secrets.FTP_PASSWORD }}"
+            --passwd="${{ secrets.FTP_PASSWORD }}" \
+            --remote-url="ftp://ftpupload.net"
         env:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
