@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install git-ftp via pip
+      # Step 2: Install git-ftp via apt
       - name: Install git-ftp
-        run: pip install git-ftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-ftp
 
       # Step 3: Deploy to FTP
       - name: Deploy to FTP
