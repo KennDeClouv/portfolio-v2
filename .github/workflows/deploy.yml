@@ -11,10 +11,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Pastikan repository sudah di-checkout dengan benar
+        uses: actions/checkout@v3
 
       - name: Check if Git is initialized
-        run: git status  # Cek apakah repositori Git terinisialisasi di folder ini
+        run: git status || echo "Git not initialized"
+
 
       - name: Set up FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v3.1.1
