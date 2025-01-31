@@ -15,8 +15,8 @@ jobs:
       - name: Upload ke FTP
         uses: SamKirkland/FTP-Deploy-Action@v3.1.1
         with:
-          server: ${{ secrets.FTP_SERVER }} # pakai secret biar aman
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ftpupload.net # pakai secret biar aman
+          username: if0_37018632
+          password: rihaneesan17
           local-dir: ./ # folder project yang akan di-upload
           server-dir: /htdocs/ # lokasi tujuan di hosting
