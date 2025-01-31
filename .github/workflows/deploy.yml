@@ -1,22 +1,26 @@
-name: Deploy ke InfinityFree
+name: FTP Deploy
 
 on:
   push:
     branches:
-      - main # sesuaikan dengan branch utama repo
+      - main  # Ganti dengan branch yang sesuai
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # Pastikan repository sudah di-checkout dengan benar
 
-      - name: Upload ke FTP
+      - name: Check if Git is initialized
+        run: git status  # Cek apakah repositori Git terinisialisasi di folder ini
+
+      - name: Set up FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v3.1.1
         with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # pastikan ini menunjuk ke folder repo Git
-          git-ftp-args: --auto-init # force deploy dan auto-init
+          local-dir: ./  # Tentukan folder yang berisi file yang mau di-upload
+          git-ftp-args: --auto-init  # Gunakan git-ftp args kalau belum terinisialisasi
