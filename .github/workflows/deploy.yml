@@ -3,25 +3,41 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main  # Ganti dengan branch yang sesuai
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Step 1: Checkout the code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check if Git is initialized
-        run: git status || echo "Git not initialized"
+      # Step 2: Setup Git config (if needed)
+      - name: Set up Git config
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "youremail@example.com"
 
+      # Step 3: Install git-ftp
+      - name: Install git-ftp
+        run: sudo apt-get install git-ftp
 
-      - name: Set up FTP deploy
-        uses: SamKirkland/FTP-Deploy-Action@v3.1.1
-        with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  # Tentukan folder yang berisi file yang mau di-upload
-          git-ftp-args: --auto-init  # Gunakan git-ftp args kalau belum terinisialisasi
+      # Step 4: Check if .git folder is present
+      - name: Check .git folder
+        run: |
+          ls -la
+
+      # Step 5: Run git-ftp to deploy
+      - name: Deploy to FTP
+        run: |
+          git ftp push \
+            --force \
+            --auto-init \
+            --syncroot=./portfolio-v2 \
+            --user="${{ secrets.FTP_USERNAME }}" \
+            --passwd="${{ secrets.FTP_PASSWORD }}"
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
