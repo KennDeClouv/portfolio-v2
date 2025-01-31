@@ -1,0 +1,101 @@
+{
+  "hero-images": [
+    "https://maelanlemeur.com/wp-content/uploads/2023/01/RalentirDiegoDOnofrio.jpg",
+    "https://maelanlemeur.com/wp-content/uploads/2023/01/FermeDeKerbiguet.jpg",
+    "https://maelanlemeur.com/wp-content/uploads/2023/01/Animal.e.webp"
+  ],
+  "projects": [
+    {
+      "title": "Arunika",
+      "year": "2025 - Now",
+      "description": "HRD Web Management",
+      "role": "A Part of Web developer",
+      "link": "https://arunika.com",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+
+    {
+      "title": "Averroes",
+      "year": "2025 - Now",
+      "description": "Administration Website Of ADIS",
+      "role": "Web developer - All in",
+      "link": "https://ppdb.averroesinsanmulia.com",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+    {
+      "title": "SIDIGS",
+      "year": "2024 - 2025",
+      "description": "All in one School App",
+      "role": "A Part of Web developer",
+      "link": "https://sidigs.com",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+    {
+      "title": "Imam Muda",
+      "year": "2024",
+      "description": "Website Administration Of Griya Tilawah",
+      "role": "Web developer - Analyst - All in",
+      "link": "https://imamgt.averroesinsanmulia.com",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+    {
+      "title": "Medina Residence",
+      "year": "2023",
+      "description": "Media Residence Website",
+      "role": "Web developer - Landing page",
+      "link": "https://sisdps.com",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+    {
+      "title": "Marboot",
+      "year": "2023",
+      "description": "Web Management Masjid",
+      "role": "Web developer - Landing page - Admin Dashboard",
+      "link": "https://marboot.id",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    },
+    {
+      "title": "Pioneer CNC",
+      "year": "2023",
+      "description": "Pioneer CNC Website",
+      "role": "Web developer - Landing page - Admin Dashboard",
+      "link": "https://pioneercnc.id",
+      "images": [
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg",
+        "https://maelanlemeur.com/wp-content/uploads/2023/10/QuentinHocde2.jpg"
+      ],
+      "type": "Website"
+    }
+  ]
+}
