@@ -3,7 +3,7 @@ name: Deploy ke InfinityFree
 on:
   push:
     branches:
-      - main # sesuaikan dengan branch utama repo
+      - main
 
 jobs:
   deploy:
@@ -18,4 +18,5 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # folder project yang akan di-upload
+          local-dir: ./
+          git-ftp-args: --auto-init # opsi ini memaksa deploy ulang dari awal
