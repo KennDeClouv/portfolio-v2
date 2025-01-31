@@ -3,7 +3,7 @@ name: Deploy ke InfinityFree
 on:
   push:
     branches:
-      - main
+      - main # sesuaikan dengan branch utama repo
 
 jobs:
   deploy:
@@ -15,8 +15,8 @@ jobs:
       - name: Upload ke FTP
         uses: SamKirkland/FTP-Deploy-Action@v3.1.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }} # pakai secret biar aman
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # sesuaikan dengan folder project
-          server-dir: /htdocs/ # sesuaikan dengan folder tujuan di hosting
+          local-dir: ./ # folder project yang akan di-upload
+          server-dir: /htdocs/ # lokasi tujuan di hosting
