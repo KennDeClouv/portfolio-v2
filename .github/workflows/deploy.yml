@@ -17,8 +17,8 @@ jobs:
       # Step 2: Setup Git config (if needed)
       - name: Set up Git config
         run: |
-          git config --global user.name "Your Name"
-          git config --global user.email "youremail@example.com"
+          git config --global user.name "KennDeClouv"
+          git config --global user.email "146813701+KennDeClouv@users.noreply.github.com"
 
       # Step 3: Install git-ftp
       - name: Install git-ftp
@@ -35,7 +35,7 @@ jobs:
           git ftp push \
             --force \
             --auto-init \
-            --syncroot=./portfolio-v2 \
+            --syncroot=./
             --user="${{ secrets.FTP_USERNAME }}" \
             --passwd="${{ secrets.FTP_PASSWORD }}"
         env:
