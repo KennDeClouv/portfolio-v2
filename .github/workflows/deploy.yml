@@ -14,31 +14,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Setup Git config (if needed)
-      - name: Set up Git config
-        run: |
-          git config --global user.name "KennDeClouv"
-          git config --global user.email "146813701+KennDeClouv@users.noreply.github.com"
-
-      # Step 3: Install git-ftp
+      # Step 2: Install git-ftp via pip
       - name: Install git-ftp
-        run: sudo apt-get install git-ftp
+        run: pip install git-ftp
 
-      # Step 4: Check if .git folder is present
-      - name: Check .git folder
-        run: |
-          ls -la
-
-      # Step 5: Run git-ftp to deploy
+      # Step 3: Deploy to FTP
       - name: Deploy to FTP
         run: |
           git ftp push \
             --force \
             --auto-init \
             --syncroot=./ \
-            --user="${{ secrets.FTP_USERNAME }}" \
-            --passwd="${{ secrets.FTP_PASSWORD }}" \
-            --remote-url="ftp://ftpupload.net"
-        env:
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+            --verbose \
+            --user "${{ secrets.FTP_USERNAME }}" \
+            --passwd "${{ secrets.FTP_PASSWORD }}" \
+            ftp://ftpupload.net
