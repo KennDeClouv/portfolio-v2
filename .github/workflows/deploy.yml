@@ -30,4 +30,4 @@ jobs:
             --verbose \
             --user "${{ secrets.FTP_USERNAME }}" \
             --passwd "${{ secrets.FTP_PASSWORD }}" \
-            ftp://ftpupload.net/htdocs
+            ftp://"${{ secrets.FTP_SERVER }}" \
