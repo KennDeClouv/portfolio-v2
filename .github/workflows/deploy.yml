@@ -8,22 +8,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout code 📤
         uses: actions/checkout@v3
 
-      - name: Decode SSH Key
-        run: |
-          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 --decode > ssh_key.pem
-          chmod 600 ssh_key.pem
-          eval "$(ssh-agent -s)"
-          ssh-add ssh_key.pem
+      - name: Install git-ftp 📥
+        run: sudo apt-get update && sudo apt-get install git-ftp
 
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.8
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY_BASE64 }}
-          script: |
-            cd ~/workspace/php_projects/kenndeclouv.my.id
-            git pull origin main
+      - name: Deploy via git-ftp 💻
+        run: |
+          git ftp init --user "${{ secrets.FTP_USER }}" --passwd "${{ secrets.FTP_PASSWORD }}" ftp://${{ secrets.FTP_HOST }}/workspace/php_projects/kenndeclouv.my.id
+        continue-on-error: true
+
+      - name: Push changes via git-ftp 📤
+        run: |
+          git ftp push --user "${{ secrets.FTP_USER }}" --passwd "${{ secrets.FTP_PASSWORD }}" ftp://${{ secrets.FTP_HOST }}/workspace/php_projects/kenndeclouv.my.id
