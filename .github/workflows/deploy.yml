@@ -19,7 +19,7 @@ jobs:
           ssh-add ssh_key.pem
 
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
