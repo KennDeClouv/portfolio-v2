@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kenndeclouv.my.id/sitemap.xml
