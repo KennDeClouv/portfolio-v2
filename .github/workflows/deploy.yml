@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           server-dir: workspace/php_projects/kenndeclouv.my.id/
-          sync-mode: true
+          state-name: .ftp-deploy-sync-state.json
 
       - name: ✅ Deployment Success
         run: echo "Deployment completed successfully!"
