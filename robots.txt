@@ -1,5 +1,6 @@
-# Start Generation Here
 User-agent: *
-Disallow: README.md
-Allow: /sitemap.xml
-# End Generation Here
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://kenndeclouv.my.id/sitemap.xml

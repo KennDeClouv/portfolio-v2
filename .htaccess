@@ -1,0 +1,14 @@
+# Redirect www ke non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block access to sensitive files
+<FilesMatch "(\.env|config\.php|database\.php)">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
