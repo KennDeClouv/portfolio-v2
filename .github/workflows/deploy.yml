@@ -24,6 +24,6 @@ jobs:
       - name: Deploy to FTP
         run: |
           git ftp push --verbose --force --auto-init --syncroot=./ \
-            --user kenndeclouv.my.id \
-            --passwd K27!@kenndeclouv#KENNDECLOUV. \
-            ftp://kenndeclouv.my.id@ftp.kenndeclouv.my.id/workspace/php_projects/kenndeclouv.my.id
+            --user "kenndeclouv.my.id" \
+            --passwd "${{ secrets.FTP_PASSWORD }}" \
+            "ftp://kenndeclouv.my.id@ftp.kenndeclouv.my.id/workspace/php_projects/kenndeclouv.my.id"
