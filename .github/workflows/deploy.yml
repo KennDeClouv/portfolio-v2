@@ -1,4 +1,4 @@
-name: FTP Deploy 
+name: FTP Deploy
 
 on:
   push:
@@ -23,7 +23,11 @@ jobs:
       # Step 3: Deploy to FTP
       - name: Deploy to FTP
         run: |
-          git ftp push --verbose --force --auto-init --syncroot=./ \
-            --user "kenndeclouv.my.id" \
+          git ftp push \
+            --force \
+            --auto-init \
+            --syncroot=./ \
+            --verbose \
+            --user "${{ secrets.FTP_USERNAME }}" \
             --passwd "${{ secrets.FTP_PASSWORD }}" \
-            "ftp://kenndeclouv.my.id@ftp.kenndeclouv.my.id/workspace/php_projects/kenndeclouv.my.id"
+            ftp://"${{ secrets.FTP_SERVER }}" \
