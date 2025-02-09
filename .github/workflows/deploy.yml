@@ -14,11 +14,10 @@ jobs:
       - name: Install git-ftp 📥
         run: sudo apt-get update && sudo apt-get install git-ftp
 
-      - name: Deploy via git-ftp 💻
+      - name: Deploy via git-ftp 🚀
         run: |
-          git ftp init --user "${{ secrets.FTP_USER }}" --passwd "${{ secrets.FTP_PASSWORD }}" ftp://${{ secrets.FTP_HOST }}/workspace/php_projects/kenndeclouv.my.id
-        continue-on-error: true
-
-      - name: Push changes via git-ftp 📤
-        run: |
+          git ftp init --auto-init --user "${{ secrets.FTP_USER }}" --passwd "${{ secrets.FTP_PASSWORD }}" ftp://${{ secrets.FTP_HOST }}/workspace/php_projects/kenndeclouv.my.id || \
           git ftp push --user "${{ secrets.FTP_USER }}" --passwd "${{ secrets.FTP_PASSWORD }}" ftp://${{ secrets.FTP_HOST }}/workspace/php_projects/kenndeclouv.my.id
+
+      - name: ✅ Deployment Success
+        run: echo "Deployment completed successfully!"
