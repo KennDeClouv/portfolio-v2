@@ -1,0 +1,5 @@
+# Start Generation Here
+User-agent: *
+Disallow: README.md
+Allow: /sitemap.xml
+# End Generation Here
