@@ -1,0 +1,29 @@
+name: Auto Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Decode SSH Key
+        run: |
+          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 --decode > ssh_key.pem
+          chmod 600 ssh_key.pem
+          eval "$(ssh-agent -s)"
+          ssh-add ssh_key.pem
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY_BASE64 }}
+          script: |
+            cd ~/workspace/php_projects/kenndeclouv.my.id
+            git pull origin main
