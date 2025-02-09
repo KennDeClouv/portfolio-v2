@@ -1,4 +1,4 @@
-name: Auto Deploy
+name: Auto Deploy 🚀
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code 📤
         uses: actions/checkout@v3
 
-      - name: Sync files to server 📤
+      - name: Sync files to server 🖥️
         uses: samKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -19,6 +19,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           server-dir: workspace/php_projects/kenndeclouv.my.id/
+          sync-mode: true
 
       - name: ✅ Deployment Success
         run: echo "Deployment completed successfully!"
