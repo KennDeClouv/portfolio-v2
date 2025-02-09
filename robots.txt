@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
 Allow: /
 
 Sitemap: https://kenndeclouv.my.id/sitemap.xml
